@@ -245,9 +245,8 @@ def execute_go(direction):
     """
     global current_room
     current_exits = current_room["exits"]
-    if is_valid_exit(current_exits, direction):
-        next_room = rooms[current_exits[direction]]                                                                                                                                             
-        move(next_room)
+    if is_valid_exit(current_exits, direction):                                                                                                                                             
+        current_room = move(current_exits, direction)
     else:
         print("You cannot go there.")
         
