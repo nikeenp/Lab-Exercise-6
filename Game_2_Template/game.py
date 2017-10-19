@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+        #!/usr/bin/python3
 
 from map import rooms
 from player import *
@@ -246,7 +246,7 @@ def execute_go(direction):
     global current_room
     current_exits = current_room["exits"]
     if is_valid_exit(current_exits, direction):
-        next_room = rooms[current_exits[direction]]
+        next_room = rooms[current_exits[direction]]                                                                                                                                             
         move(next_room)
     else:
         print("You cannot go there.")
@@ -344,7 +344,7 @@ def menu(exits, room_items, inv_items):
     return normalised_user_input
 
 
-def move(room):
+def move(exits, direction):
     """This function returns the room into which the player will move if, from a
     dictionary "exits" of avaiable exits, they choose to move towards the exit
     with the name given by "direction". For example:
@@ -358,8 +358,7 @@ def move(room):
     """
 
     # Next room to go to
-    global current_room
-    current_room = room
+    return rooms[exits[direction]]
 
 
 # This is the entry point of our program
